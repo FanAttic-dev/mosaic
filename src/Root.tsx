@@ -2,6 +2,8 @@ import { Composition } from "remotion";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
 import { GMMosaicComposition } from "./components/gmmosaic/GMMosaicComposition";
+import { GMMosaicMasonryComposition } from "./components/gmmosaic/GMMosaicMasonryComposition";
+import { GMMosaicQuiltedComposition } from "./components/gmmosaic/GMMosaicQuiltedComposition";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -49,6 +51,22 @@ export const RemotionRoot: React.FC = () => {
         width={1920}
         height={1080}
         component={GMMosaicComposition}
+      />
+      <Composition
+        id="MosaicMasonry"
+        durationInFrames={150}
+        fps={30}
+        width={1920}
+        height={1080}
+        component={GMMosaicMasonryComposition}
+      />
+      <Composition
+        id="MosaicQuilted"
+        durationInFrames={150}
+        fps={30}
+        width={1920}
+        height={1080}
+        component={GMMosaicQuiltedComposition}
       />
     </>
   );
