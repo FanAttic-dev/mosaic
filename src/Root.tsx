@@ -44,7 +44,7 @@ export const RemotionRoot: React.FC = () => {
           logoColor2: "#86A8E7" as const,
         }}
       />
-      {/* <Composition
+      <Composition
         id="Mosaic"
         durationInFrames={150}
         fps={30}
@@ -67,7 +67,7 @@ export const RemotionRoot: React.FC = () => {
         width={1920}
         height={1080}
         component={GMMosaicQuiltedComposition}
-      /> */}
+      />
     </>
   );
 };
