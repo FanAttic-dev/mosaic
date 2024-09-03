@@ -1,9 +1,5 @@
 import { Composition } from "remotion";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
-import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
-import { GMMosaicComposition } from "./components/gmmosaic/GMMosaicComposition";
-import { GMMosaicMasonryComposition } from "./components/gmmosaic/GMMosaicMasonryComposition";
-import { GMMosaicQuiltedComposition } from "./components/gmmosaic/GMMosaicQuiltedComposition";
 
 // Each <Composition> is an entry in the sidebar!
 
