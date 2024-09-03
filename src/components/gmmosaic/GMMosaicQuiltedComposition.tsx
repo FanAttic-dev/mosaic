@@ -11,11 +11,12 @@ export const GMMosaicQuiltedComposition: React.FC = () => {
   const frame = useCurrentFrame();
 
   const videos = require("../../../public/assets/user_videos.json");
+  console.log(videos.length);
 
   const containerStyle = {
     display: "grid",
-    gridTemplateColumns: "repeat(30, 1fr)",
-    // transform: `translateY(-${frame * 12}px)`,
+    gridTemplateColumns: "repeat(25, 1fr)",
+    // transform: `translateY(-${frame * 2}px)`,
     // gridTemplateRows: "masonry",
     gridAutoFlow: "row dense",
     // gap: "2px",
@@ -24,7 +25,7 @@ export const GMMosaicQuiltedComposition: React.FC = () => {
   const videoStyle = (index: number) => ({
     width: "100%",
     height: "100%",
-    // objectFit: "cover",
+    objectFit: "cover",
     gridColumn: videos[index].gridColumn,
     gridRow: videos[index].gridRow,
   });
