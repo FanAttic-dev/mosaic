@@ -6,7 +6,7 @@ import {
   useVideoConfig,
 } from "remotion";
 
-export const GMMosaicQuiltedComposition: React.FC = () => {
+export const MosaicQuiltedComposition: React.FC = () => {
   const videoConfig = useVideoConfig();
   const frame = useCurrentFrame();
 
@@ -16,7 +16,7 @@ export const GMMosaicQuiltedComposition: React.FC = () => {
   const containerStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(25, 1fr)",
-    // transform: `translateY(-${frame * 2}px)`,
+    transform: `translateY(-${frame * 2}px)`,
     // gridTemplateRows: "masonry",
     gridAutoFlow: "row dense",
     // gap: "2px",
@@ -39,6 +39,7 @@ export const GMMosaicQuiltedComposition: React.FC = () => {
             src={video.url}
             style={videoStyle(index)}
             volume={0}
+            toneMapped={false}
           />
         );
       })}

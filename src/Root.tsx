@@ -1,13 +1,17 @@
 import { Composition } from "remotion";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
-import { GMMosaicComposition } from "./components/gmmosaic/GMMosaicComposition";
-import { GMMosaicMasonryComposition } from "./components/gmmosaic/GMMosaicMasonryComposition";
-import { GMMosaicQuiltedComposition } from "./components/gmmosaic/GMMosaicQuiltedComposition";
+import { MosaicComposition } from "./components/mosaic/MosaicComposition";
+import { MosaicQuiltedComposition } from "./components/mosaic/MosaicQuiltedComposition";
 
 // Each <Composition> is an entry in the sidebar!
 
 export const RemotionRoot: React.FC = () => {
+  const FPS = 25;
+  const DURATION_IN_FRAMES = 125;
+  const WIDTH = 1920;
+  const HEIGHT = 1080;
+
   return (
     <>
       <Composition
@@ -15,10 +19,10 @@ export const RemotionRoot: React.FC = () => {
         // npx remotion render src/index.ts <id> out/video.mp4
         id="HelloWorld"
         component={HelloWorld}
-        durationInFrames={150}
-        fps={30}
-        width={1920}
-        height={1080}
+        durationInFrames={DURATION_IN_FRAMES}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
         // You can override these props for each render:
         // https://www.remotion.dev/docs/parametrized-rendering
         schema={myCompSchema}
@@ -34,10 +38,10 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="OnlyLogo"
         component={Logo}
-        durationInFrames={150}
-        fps={30}
-        width={1920}
-        height={1080}
+        durationInFrames={DURATION_IN_FRAMES}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
         schema={myCompSchema2}
         defaultProps={{
           logoColor1: "#91dAE2" as const,
@@ -46,27 +50,19 @@ export const RemotionRoot: React.FC = () => {
       />
       <Composition
         id="Mosaic"
-        durationInFrames={150}
-        fps={30}
-        width={1920}
-        height={1080}
-        component={GMMosaicComposition}
-      />
-      <Composition
-        id="MosaicMasonry"
-        durationInFrames={150}
-        fps={30}
-        width={1920}
-        height={1080}
-        component={GMMosaicMasonryComposition}
+        component={MosaicComposition}
+        durationInFrames={DURATION_IN_FRAMES}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
       />
       <Composition
         id="MosaicQuilted"
-        durationInFrames={150}
-        fps={30}
-        width={1920}
-        height={1080}
-        component={GMMosaicQuiltedComposition}
+        component={MosaicQuiltedComposition}
+        durationInFrames={DURATION_IN_FRAMES}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
       />
     </>
   );
